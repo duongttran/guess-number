@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Guessing game</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Guessing game</h1>
+                <h2 id="resultArea">
+                    Show result
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row main-space">
+            <div class="col-md-6 text-right">
+                <!-- <form id="myForm"> -->
+                <input type="number" id="guessNumber">
+                <!-- </form> -->
+            </div>
+            <div class="col-md-6 text-left">
+                <button class="btn btn-primary" onclick="guess()" id="guessButton">Guess</button>
+                <button class="btn btn-primary" onclick=" resetEverything() " id="resetButton " type="reset ">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <p id="historyArea">History of you guess:</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <p id="remainingGuess">Remaining guess: <span id="remainGuess"></span></p>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <p>
+                    Your time on this round: <span id="timecount"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js ">
+    </script>
+</body>
+
+</html>
