@@ -47,6 +47,7 @@ function guess() {
         document.getElementById("guessButton").disabled = true;
         document.getElementById("resultArea").innerHTML = "You lose :(";
         alert("You don't have any guess left");
+        timeOut();
     }
 }
 
