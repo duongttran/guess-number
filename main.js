@@ -44,8 +44,9 @@ function guess() {
     // 1. make only 5 chance
     // 3. if user win, or lose the guess button will be disabled
     if (history.length == 5) {
-        alert("you will not have to guess anymore!")
         document.getElementById("guessButton").disabled = true;
+        document.getElementById("resultArea").innerHTML = "You lose :(";
+        alert("You don't have any guess left");
     }
 }
 
