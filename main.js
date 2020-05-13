@@ -15,8 +15,9 @@ function guess() {
     document.getElementById("guessNumber").value = "";
     //save the result message
     let resultMessage = ''
-        //4. compare with the value the comp picked
-        //5. if comp's num > user's num, "too low"
+
+    //4. compare with the value the comp picked
+    //5. if comp's num > user's num, "too low"
     if (computerNum > userNum) {
         resultMessage = 'too low';
         //6. if comp's num < user's num, "too high"
@@ -24,17 +25,20 @@ function guess() {
         resultMessage = 'too high';
         //7. if comp's num === user's num, "correct"
     } else if (computerNum == userNum) {
-        resultMessage = 'correct!';
-        document.getElementById("resultArea").style.backgroundColor = "green";
-        document.getElementById("guessButton").disabled = true;
-        timeOut()
-        alert("You win!");
 
+        document.getElementById("resultArea").innerHTML = `${userNum} is correct! You win! :)`
+        document.getElementById("resultArea").classList.add("alert-success");
+        document.getElementById("guessButton").disabled = true;
+
+        timeOut()
+
+        return;
     }
 
     remainingGuess--;
 
     history.push(userNum)
+
 
     //8. show the result to the user
     document.getElementById("resultArea").innerHTML = `Result is ${resultMessage}`;
@@ -45,7 +49,7 @@ function guess() {
     // 3. if user win, or lose the guess button will be disabled
     if (history.length == 5) {
         document.getElementById("guessButton").disabled = true;
-        document.getElementById("resultArea").innerHTML = "You lose :(";
+        document.getElementById("resultArea").innerHTML = `The result is ${computerNum}. You ran out of guess! You lose :(`;
         alert("You don't have any guess left");
         timeOut();
     }
@@ -64,7 +68,7 @@ function resetEverything() {
 
     //Clear result
     document.getElementById("resultArea").innerHTML = "Show result";
-    document.getElementById("resultArea").style.backgroundColor = "transparent";
+    document.getElementById("resultArea").classList.remove("alert-success");
     //Remaining guess is clear
     document.getElementById("remainGuess").innerHTML = "";
     remainingGuess = 5;
@@ -81,8 +85,9 @@ function timecounting() {
             time += 1;
             if (time >= 20) {
                 document.getElementById("guessButton").disabled = true;
-                alert("you have run out of time!");
-                resetEverything();
+                alert("You have run out of time!");
+                document.getElementById("resultArea").innerHTML = `The result is ${computerNum}. You ran out of time! You lose :(`;
+                timeOut();
             }
 
             document.getElementById('timecount').innerHTML = time

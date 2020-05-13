@@ -29,14 +29,14 @@
 
     <div class="container">
         <div class="row main-space">
-            <div class="col-md-6 text-right">
+            <div class="col-md-6 col-sm-12 text-center">
                 <!-- <form id="myForm"> -->
                 <input type="number" id="guessNumber">
                 <!-- </form> -->
             </div>
-            <div class="col-md-6 text-left">
+            <div class="col-md-6 col-sm-12 text-center">
                 <button class="btn btn-primary" onclick="guess()" id="guessButton">Guess</button>
-                <button class="btn btn-primary" onclick=" resetEverything() " id="resetButton " type="reset ">Reset</button>
+                <button class="btn btn-danger" onclick=" resetEverything() " id="resetButton " type="reset ">Reset</button>
             </div>
         </div>
     </div>
@@ -47,16 +47,24 @@
                 <p id="historyArea">History of you guess:</p>
             </div>
             <div class="col-md-4 text-center">
-                <p id="remainingGuess">Remaining guess: <span id="remainGuess"></span></p>
+                <p id="remainingGuess">Remaining guess: <span id="remainGuess"></span> out of 5</p>
             </div>
 
             <div class="col-md-4 text-center">
                 <p>
-                    Your time on this round: <span id="timecount"></span>
+                    Your time on this round: <span id="timecount"></span>/20s
                 </p>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
 
 
     <script src="main.js ">
