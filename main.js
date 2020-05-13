@@ -54,7 +54,7 @@ function guess() {
 function resetEverything() {
     // generate a different computerNum
     computerNum = Math.floor(Math.random() * 100) + 1;
-
+    console.log(computerNum);
     document.getElementById("guessNumber").value = "";
     document.getElementById("historyArea").innerHTML = `History of you guess:`;
     document.getElementById("guessButton").disabled = false;
@@ -67,8 +67,8 @@ function resetEverything() {
     document.getElementById("remainGuess").innerHTML = "";
     remainingGuess = 5;
     //Clear time
-    timeOut()
-
+    timeOut();
+    timecounting();
 }
 
 // 4. add timer (if you can't finish the game within 20s, you'll lose)
